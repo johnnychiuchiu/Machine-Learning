@@ -4,4 +4,5 @@ I will continuously update some reproducible machine learning note in R and Pyth
 
 ***
 * 2017-02-19: Random Forest for classification problems.
-* 2017-02-23: Linear Regression non-traditional model building
+* 2017-02-23: Linear Regression non-traditional model building.
+* 2017-03-01: extreme gradient boosting for classification problems.
