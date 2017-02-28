@@ -1,7 +1,12 @@
-#reference:http://machinelearningmastery.com/tune-machine-learning-algorithms-in-r/
+#reference:
+#- http://machinelearningmastery.com/tune-machine-learning-algorithms-in-r/
+#- https://www.youtube.com/watch?v=loNcrMjYh64
+
 library(randomForest)
 library(caret)
 library(mlbench)
+
+#key feature:
 
 #######################################################################################
 ######################################################## Load Dataset #################
