@@ -2,6 +2,7 @@
 #- https://www.analyticsvidhya.com/blog/2016/01/xgboost-algorithm-easy-steps/
 #- http://xgboost.readthedocs.io/en/latest/model.html
 #- http://xgboost.readthedocs.io/en/latest/R-package/xgboostPresentation.html
+#- https://www.r-bloggers.com/an-introduction-to-xgboost-r-package/
 
 library(xgboost)
 
