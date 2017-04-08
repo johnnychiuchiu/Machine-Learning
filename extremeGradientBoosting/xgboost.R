@@ -11,6 +11,7 @@ library(xgboost)
 #  It is an extension of the classic gbm algorithm.
 #- It supports various objective functions, including regression, classification and ranking.
 #- XGBoost is able to utilize more computational power and get more accurate prediction.
+#- xgboost seems better at using the values as categories than if you make it sparse with one hot encoding
 
 #######################################################################################
 ################################################ Load Dataset  ########################
