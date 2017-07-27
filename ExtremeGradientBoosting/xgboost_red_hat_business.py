@@ -6,7 +6,7 @@
 
 import numpy as np
 import pandas as pd
-import xgboost as xgb
+import xgboost_red_hat_business as xgb
 from sklearn.preprocessing import OneHotEncoder
 
 #######################################################################################
