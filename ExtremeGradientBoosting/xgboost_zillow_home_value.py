@@ -118,40 +118,40 @@ xgb1 = XGBClassifier(
 # GridSearchCV documentation -> http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html
 # scoring parameters -> http://scikit-learn.org/stable/modules/model_evaluation.html
 
-# param_test1 = {
-#  'max_depth':range(3,10,2),
-#  'min_child_weight':range(1,6,2)
-# }
-# gsearch1 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=5,
-#  min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
-#  objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
-#  param_grid = param_test1, scoring='neg_mean_squared_error',iid=False, cv=5)
-# gsearch1.fit(x_train, y_train)
-# gsearch1.cv_results_, gsearch1.best_params_, gsearch1.best_score_
+param_test1 = {
+ 'max_depth':range(3,10,2),
+ 'min_child_weight':range(1,6,2)
+}
+gsearch1 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=5,
+ min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
+ objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
+ param_grid = param_test1, scoring='neg_mean_squared_error',iid=False, cv=5)
+gsearch1.fit(x_train, y_train)
+gsearch1.cv_results_, gsearch1.best_params_, gsearch1.best_score_
 
 # Lets go one step deeper and look for optimum values. We'll search for values 1 above and below the optimum values
 # because we took an interval of two.
-# param_test2 = {
-#  'max_depth':[3,4,5,6],
-#  'min_child_weight':[1,2,3]
-# }
-# gsearch2 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=5,
-#  min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
-#  objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
-#  param_grid = param_test2, scoring='neg_mean_squared_error',iid=False, cv=5)
-# gsearch2.fit(x_train, y_train)
-# gsearch2.cv_results_, gsearch2.best_params_, gsearch2.best_score_ # {'max_depth': 3, 'min_child_weight': 2}, -0.0062414673157036304
-#
-#
-# param_test2b = {
-#  'max_depth':[1,2,3]
-# }
-# gsearch2b = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
-#  min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
-#  objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
-#  param_grid = param_test2b, scoring='neg_mean_squared_error',iid=False, cv=5)
-# gsearch2b.fit(x_train, y_train)
-# gsearch2b.cv_results_, gsearch2b.best_params_, gsearch2b.best_score_ # {'max_depth': 2}, -0.0062414673157036304
+param_test2 = {
+ 'max_depth':[3,4,5,6],
+ 'min_child_weight':[1,2,3]
+}
+gsearch2 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=5,
+ min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
+ objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
+ param_grid = param_test2, scoring='neg_mean_squared_error',iid=False, cv=5)
+gsearch2.fit(x_train, y_train)
+gsearch2.cv_results_, gsearch2.best_params_, gsearch2.best_score_ # {'max_depth': 3, 'min_child_weight': 2}, -0.0062414673157036304
+
+
+param_test2b = {
+ 'max_depth':[1,2,3]
+}
+gsearch2b = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
+ min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
+ objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
+ param_grid = param_test2b, scoring='neg_mean_squared_error',iid=False, cv=5)
+gsearch2b.fit(x_train, y_train)
+gsearch2b.cv_results_, gsearch2b.best_params_, gsearch2b.best_score_ # {'max_depth': 2}, -0.0062414673157036304
 
 
 ##### Step 3: Tune gamma
@@ -163,16 +163,16 @@ xgb1 = XGBClassifier(
 # Gamma specifies the minimum loss reduction required to make a split. Higher gamma makes the algorithm conservative.
 # The values can vary depending on the loss function and should be tuned.
 
-# param_test3 = {
-#  'gamma':[i/10.0 for i in range(0,5)]
-# }
-# gsearch3 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
-#  min_child_weight=2, gamma=0, subsample=0.8, colsample_bytree=0.8,
-#  objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
-#  param_grid = param_test3, scoring='neg_mean_squared_error',iid=False, cv=5)
-# gsearch3.fit(x_train, y_train)
-# gsearch3.cv_results_, gsearch3.best_params_, gsearch3.best_score_ # {'gamma': 0.1}, -0.0062309452332556248
-#
+param_test3 = {
+ 'gamma':[i/10.0 for i in range(0,5)]
+}
+gsearch3 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
+ min_child_weight=2, gamma=0, subsample=0.8, colsample_bytree=0.8,
+ objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
+ param_grid = param_test3, scoring='neg_mean_squared_error',iid=False, cv=5)
+gsearch3.fit(x_train, y_train)
+gsearch3.cv_results_, gsearch3.best_params_, gsearch3.best_score_ # {'gamma': 0.1}, -0.0062309452332556248
+
 
 
 
@@ -184,27 +184,27 @@ xgb1 = XGBClassifier(
 # take values 0.6,0.7,0.8,0.9 for both to start with.
 ### note
 
-# param_test4 = {
-#  'subsample':[i/10.0 for i in range(6,10)],
-#  'colsample_bytree':[i/10.0 for i in range(6,10)]
-# }
-# gsearch4 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
-#  min_child_weight=2, gamma=0.1, subsample=0.8, colsample_bytree=0.8,
-#  objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
-#  param_grid = param_test4, scoring='neg_mean_squared_error',iid=False, cv=5)
-# gsearch4.fit(x_train, y_train)
-# gsearch4.cv_results_, gsearch4.best_params_, gsearch4.best_score_ # {'subsample': 0.8, 'colsample_bytree': 0.6}
+param_test4 = {
+ 'subsample':[i/10.0 for i in range(6,10)],
+ 'colsample_bytree':[i/10.0 for i in range(6,10)]
+}
+gsearch4 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
+ min_child_weight=2, gamma=0.1, subsample=0.8, colsample_bytree=0.8,
+ objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
+ param_grid = param_test4, scoring='neg_mean_squared_error',iid=False, cv=5)
+gsearch4.fit(x_train, y_train)
+gsearch4.cv_results_, gsearch4.best_params_, gsearch4.best_score_ # {'subsample': 0.8, 'colsample_bytree': 0.6}
 
 # Now we should try values in 0.05 interval around the optimum value we just got.
-# param_test5 = {
-#     'colsample_bytree':[i/10.0 for i in range(3,7)]
-# }
-# gsearch5 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
-#  min_child_weight=2, gamma=0.1, subsample=0.8, colsample_bytree=0.6,
-#  objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
-#  param_grid = param_test5, scoring='neg_mean_squared_error',iid=False, cv=5)
-# gsearch5.fit(x_train, y_train)
-# gsearch5.cv_results_, gsearch5.best_params_, gsearch5.best_score_ #
+param_test5 = {
+    'colsample_bytree':[i/10.0 for i in range(3,7)]
+}
+gsearch5 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
+ min_child_weight=2, gamma=0.1, subsample=0.8, colsample_bytree=0.6,
+ objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
+ param_grid = param_test5, scoring='neg_mean_squared_error',iid=False, cv=5)
+gsearch5.fit(x_train, y_train)
+gsearch5.cv_results_, gsearch5.best_params_, gsearch5.best_score_ #
 
 ##### Step 5: Tuning Regularization Parameters
 ### description
@@ -214,26 +214,26 @@ xgb1 = XGBClassifier(
 # Tune regularization parameters (lambda, alpha) for xgboost which can help reduce model complexity and enhance performance.
 ### note
 
-# param_test6 = {
-#  'reg_alpha':[1e-5, 1e-2, 0.1, 1, 100]
-# }
-# gsearch6 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
-#  min_child_weight=2, gamma=0.1, subsample=0.8, colsample_bytree=0.6,
-#  objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
-#  param_grid = param_test6, scoring='neg_mean_squared_error',iid=False, cv=5)
-# gsearch6.fit(x_train, y_train)
-# gsearch6.cv_results_, gsearch6.best_params_, gsearch6.best_score_ # {'reg_alpha': 0.01}, -0.0059092676267027853
+param_test6 = {
+ 'reg_alpha':[1e-5, 1e-2, 0.1, 1, 100]
+}
+gsearch6 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
+ min_child_weight=2, gamma=0.1, subsample=0.8, colsample_bytree=0.6,
+ objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27),
+ param_grid = param_test6, scoring='neg_mean_squared_error',iid=False, cv=5)
+gsearch6.fit(x_train, y_train)
+gsearch6.cv_results_, gsearch6.best_params_, gsearch6.best_score_ # {'reg_alpha': 0.01}, -0.0059092676267027853
 
 
-# param_test7 = {
-#  'reg_alpha':[0, 0.005, 0.01, 0.03, 0.05]
-# }
-# gsearch7 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
-#  min_child_weight=2, gamma=0.1, subsample=0.8, colsample_bytree=0.6,
-#  objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27, reg_alpha=0.01),
-#  param_grid = param_test7, scoring='neg_mean_squared_error',iid=False, cv=5)
-# gsearch7.fit(x_train, y_train)
-# gsearch7.cv_results_, gsearch7.best_params_, gsearch7.best_score_ # {'reg_alpha': 0.01}, -0.0059092676267027853
+param_test7 = {
+ 'reg_alpha':[0, 0.005, 0.01, 0.03, 0.05]
+}
+gsearch7 = GridSearchCV(estimator = XGBClassifier(learning_rate =0.2, n_estimators=26, max_depth=3,
+ min_child_weight=2, gamma=0.1, subsample=0.8, colsample_bytree=0.6,
+ objective= 'reg:linear', n_jobs=4, scale_pos_weight=1, random_state=27, reg_alpha=0.01),
+ param_grid = param_test7, scoring='neg_mean_squared_error',iid=False, cv=5)
+gsearch7.fit(x_train, y_train)
+gsearch7.cv_results_, gsearch7.best_params_, gsearch7.best_score_ # {'reg_alpha': 0.01}, -0.0059092676267027853
 
 
 
