@@ -6,21 +6,21 @@
 
 import numpy as np
 import pandas as pd
-import xgboost as xgb
+import xgboost_red_hat_business as xgb
 from sklearn.preprocessing import OneHotEncoder
 
 #######################################################################################
 ######################################################## Load Dataset #################
 #######################################################################################
-PATH = '/Users/johnnychiu/Desktop/MyFiles/learning/kaggle/5.Predicting-Red-Hat-Business-Value/_data/'
+PATH = '/Users/johnnychiu/Desktop/MyFiles/learning/kaggle/5.Predicting-Red-Hat-Business-Value/_data'
 
 
-act_train_data = pd.read_csv(PATH+"act_train.csv",
+act_train_data = pd.read_csv(PATH+"/act_train.csv",
                              dtype={'people_id': np.str, 'activity_id': np.str, 'outcome': np.int8},
                              parse_dates=['date'])
-act_test_data = pd.read_csv(PATH+"act_test.csv", dtype={'people_id': np.str, 'activity_id': np.str},
+act_test_data = pd.read_csv(PATH+"/act_test.csv", dtype={'people_id': np.str, 'activity_id': np.str},
                             parse_dates=['date'])
-people_data = pd.read_csv(PATH+"people.csv",
+people_data = pd.read_csv(PATH+"/people.csv",
                           dtype={'people_id': np.str, 'activity_id': np.str, 'char_38': np.int32}, parse_dates=['date'])
 
 
