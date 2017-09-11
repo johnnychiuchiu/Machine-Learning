@@ -5,3 +5,4 @@
 /.idea
 .xml
 .DS_Store
+./ExtremeGradientBoosting/.ipynb_checkpoints/*
