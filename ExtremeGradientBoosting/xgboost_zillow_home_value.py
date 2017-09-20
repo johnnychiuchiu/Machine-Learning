@@ -35,10 +35,10 @@ print('Shape train: {}\nShape test: {}'.format(x_train.shape, x_test.shape))
 train_df = train_df[train_df.logerror > -0.4]
 train_df = train_df[train_df.logerror < 0.418]
 
-# # drop out ouliers & downsize the train data by random sampling
-# random.seed(33)
-# sel_parcelid = random.sample(train_df.parcelid.unique(), 200)
-# train_df = train_df[train_df['parcelid'].isin(sel_parcelid)].reset_index(drop=True)
+# drop out ouliers & downsize the train data by random sampling
+random.seed(33)
+sel_parcelid = random.sample(train_df.parcelid.unique(), 200)
+train_df = train_df[train_df['parcelid'].isin(sel_parcelid)].reset_index(drop=True)
 
 
 x_train = train_df.drop(['parcelid', 'logerror', 'transactiondate'], axis=1)
