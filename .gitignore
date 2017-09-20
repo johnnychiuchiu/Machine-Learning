@@ -6,4 +6,5 @@
 .xml
 .DS_Store
 ./ExtremeGradientBoosting/.ipynb_checkpoints/*
-./RecommenderSystem/ml-100k/*
+RecommenderSystem/ml-100k/*
+*/.ipynb_checkpoints/*
