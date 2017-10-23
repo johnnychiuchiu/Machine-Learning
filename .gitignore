@@ -9,3 +9,4 @@
 RecommenderSystem/ml-100k/*
 */.ipynb_checkpoints/*
 /some_other
+.ipynb_checkpoints
