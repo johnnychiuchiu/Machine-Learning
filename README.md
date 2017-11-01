@@ -11,3 +11,5 @@ I will continuously update some reproducible machine learning note in R and Pyth
 * 2017-09-11: [parameter tuning for xgboost](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/ExtremeGradientBoosting/xgboost_zillow_home_value.ipynb)
 * 2017-09-19: [Understand Collaborative Filtering From Scratch](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/collaborative_filtering.ipynb)
 * 2017-10-23: [Customer Value calculation using RFM](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)
+* 2017-11-01: [Linear Regression Model Building Guideline](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/LinearRegression/linearRegressionModelBuilding.Rmd)
+
