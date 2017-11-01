@@ -242,9 +242,7 @@ $(document).ready(function () {
 <h1>Model Building Procedure</h1>
 <p>Here are the suggested steps from the textbook “Predictive Analytics: Paramertic Models for Regression and Classificantion” to take when building up regression models.</p>
 <blockquote>
-<ol style="list-style-type: decimal">
-<li>Univariate exploration of the data</li>
-</ol>
+<p><strong>1. Univariate exploration of the data</strong></p>
 </blockquote>
 <p>Examine each variable for outliers, missing values, obviously wrong or inconsistent data entries..etc</p>
 <div id="check-missing-values" class="section level4">
@@ -255,27 +253,19 @@ $(document).ready(function () {
 <h4>• Check the distribution of each variable</h4>
 <p>Examine distributions for all single variablese and in cases of highly skewed distributions make suitable transformations to sysmmetrize the distributions.</p>
 <blockquote>
-<ol start="2" style="list-style-type: decimal">
-<li>Bivariate exploration of the data</li>
-</ol>
+<p><strong>2. Bivariate exploration of the data</strong></p>
 </blockquote>
 <p>Make scatter plots and compute correlations between all variables to identify any multicollinearities. When the number of the predictors is large, then it is not recommend to make transformation on <span class="math inline">\(y\)</span> unless the transformation works on all <span class="math inline">\(x\)</span>’s or a subject matter based transformation exists for <span class="math inline">\(y\)</span> .</p>
 <blockquote>
-<ol start="3" style="list-style-type: decimal">
-<li>Interactions</li>
-</ol>
+<p><strong>3. Interactions</strong></p>
 </blockquote>
 <p>Recommend including only those interactions taht are supported by someone with domain knowhow.</p>
 <blockquote>
-<ol start="4" style="list-style-type: decimal">
-<li>Traning set and test set</li>
-</ol>
+<p><strong>4. Traning set and test set</strong></p>
 </blockquote>
 <p>Divide the dataset into training and testing dataset.</p>
 <blockquote>
-<ol start="5" style="list-style-type: decimal">
-<li>Fit several candidate models</li>
-</ol>
+<p><strong>5. Fit several candidate models</strong></p>
 </blockquote>
 </div>
 <div id="ridge-regression" class="section level4">
@@ -321,9 +311,7 @@ $(document).ready(function () {
 <div id="using-aic-to-do-stepwise-regression" class="section level4">
 <h4>— using AIC to do stepwise regression</h4>
 <blockquote>
-<ol start="6" style="list-style-type: decimal">
-<li>Comapre the candidate models</li>
-</ol>
+<p><strong>6. Comapre the candidate models</strong></p>
 </blockquote>
 </div>
 <div id="some-criterions" class="section level4">
@@ -420,9 +408,7 @@ $(document).ready(function () {
 <p>If <span class="math inline">\(x_j\)</span> is approximately linearly dependent on other predictors then <span class="math inline">\(1-R_j^2\)</span> will be close to 1 and so <em>VIF_j</em> will be large.</p>
 <p>A common rule of thumb is to declare multicollinearity if most of the <em>VIF_j</em> are &gt;10</p>
 <blockquote>
-<ol start="7" style="list-style-type: decimal">
-<li>Selection of final model</li>
-</ol>
+<p><strong>7. Selection of final model</strong></p>
 </blockquote>
 <p>Make the final selection based on the test <span class="math inline">\(MSE\)</span> of the candidate model using the testing dataset.</p>
 <hr />

@@ -3,9 +3,9 @@ title: "Linear Regression Model Building"
 author: "Johnny Chiu"
 date: "10/29/2017"
 output:
-  word_document: default
-  pdf_document: default
   html_document: default
+  pdf_document: default
+  word_document: default
 ---
 
 **Table of Content**
@@ -151,7 +151,7 @@ which is a straight line on the log of $y$ scale, so the model is called **log m
 # Model Building Procedure
 Here are the suggested steps from the textbook "Predictive Analytics: Paramertic Models for Regression and Classificantion" to take when building up regression models.
 
-> 1. Univariate exploration of the data
+> **1. Univariate exploration of the data**
 
 Examine each variable for outliers, missing values, obviously wrong or inconsistent data entries..etc
 
@@ -161,21 +161,21 @@ Replace the missing values with some value or discard the row with missing value
 #### • Check the distribution of each variable
 Examine distributions for all single variablese and in cases of highly skewed distributions make suitable transformations to sysmmetrize the distributions. 
 
-> 2. Bivariate exploration of the data
+> **2. Bivariate exploration of the data**
 
 Make scatter plots and compute correlations between all variables to identify any multicollinearities. When the number of the predictors is large, then it is not recommend to make transformation on $y$ unless the transformation works on all $x$'s or a subject matter based transformation exists for $y$ .
 
-> 3. Interactions
+> **3. Interactions**
 
 Recommend including only those interactions taht are supported by someone with domain knowhow.
 
 
-> 4. Traning set and test set
+> **4. Traning set and test set**
 
 Divide the dataset into training and testing dataset.
 
 
-> 5. Fit several candidate models
+> **5. Fit several candidate models**
 
 #### • Ridge Regression
 
@@ -226,7 +226,7 @@ Since ridge regression has a circular constraint with no sharp points, the inter
 
 
 
-> 6. Comapre the candidate models
+> **6. Comapre the candidate models**
 
 #### Some Criterions
 
@@ -251,6 +251,7 @@ $$SST=SSR+SSE  $$
 R-sqaured can be increased to 100% in the limit by adding more and more predictors to the model. It will then be a problem of overfitting. Therefore, adjusted R-squared is often used as a measure of the goodness of fit. It is defined as
 $$ R_{adj}^2 = 1 - \frac{SSE/(n-(p+1))}{SST/(n-1)}$$
 We can see that as $p$ increases, $SSE/(n-(p+1))$ will become larger, which makes $R_{adj}^2$ become smaller.
+
 
 #### • Cp statistics
 
@@ -363,7 +364,7 @@ A common rule of thumb is to declare multicollinearity if most of the *VIF_j* ar
 
 
 
-> 7. Selection of final model
+> **7. Selection of final model**
 
 Make the final selection based on the test $MSE$ of the candidate model using the testing dataset. 
 
