@@ -11,3 +11,4 @@ RecommenderSystem/ml-100k/*
 /some_other
 .ipynb_checkpoints
 */.DS_Store
+.DS_Store/*
