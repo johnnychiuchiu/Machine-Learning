@@ -17,4 +17,6 @@ I will continuously update some reproducible machine learning note in R and Pyth
   * Key concept: *Logistic Regression* | *Maximum probability classifier* | *Bayes Classifier* | *ROC, AUC*
 * 2017-11-15: [Gaussian Mixture Model](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/Clustering/GaussianMixtureModel/gmm.ipynb)
   * Key concept: *clustering* | *outlier detection* | *EM steps* | *density estimation*
-  
+ * 2017-11-18: [Discriminant Analysis](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/DiscriminantAnalysis/discriminantAnalysis.ipynb)
+   * Key concept: *LDA* | *QDA* | *Bayes Classifier*
+   
