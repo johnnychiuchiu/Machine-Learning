@@ -19,7 +19,7 @@ I will continuously update some reproducible machine learning note in R and Pyth
   * Key concept: *clustering* | *outlier detection* | *EM steps* | *density estimation*
  * 2017-11-18: [Discriminant Analysis](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/DiscriminantAnalysis/discriminantAnalysis.ipynb)
    * Key concept: *LDA* | *QDA* | *Bayes Classifier*
-* 2017-11-24: [Build Up My Own Recommend Music Playlist from Scratch](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/latentFactorModel.ipynb)
+* 2017-11-24: [Build Up My Own Recommended Song Playlist from Scratch](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/latentFactorModel.ipynb)
    * Key concept: *Latent Factor Model* | *Alternating Least Squares* | *Collaborative Filtering*
 
    
