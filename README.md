@@ -21,5 +21,8 @@ I will continuously update some reproducible machine learning note in R and Pyth
    * Key concept: *LDA* | *QDA* | *Bayes Classifier*
 * 2017-11-24: [Build Up My Own Recommended Song Playlist from Scratch](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/latentFactorModel.ipynb)
    * Key concept: *Latent Factor Model* | *Alternating Least Squares* | *Collaborative Filtering*
-
-   
+* 2017-12-11: [Decision Tree Introduction](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/decisionTree.ipynb)
+   * Key concept: *Information Gain* | *Impurity measure* | *Entropy* | *Gini Index* | *Tree Pruning concept*
+* 2017-12-11: [Bagging and Random Forest](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Bagging/randomForest.ipynb)
+   * Key concept: *Ensemble method* | *Feature importance* | *Bagging* | *Random Forest*
+    
