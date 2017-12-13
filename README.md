@@ -25,7 +25,7 @@ I will continuously update some reproducible machine learning note in R and Pyth
    * Key concept: *Information Gain* | *Impurity measure* | *Entropy* | *Gini Index* | *Tree Pruning concept*
 * 2017-12-11: [Bagging and Random Forest](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Bagging/randomForest.ipynb)
    * Key concept: *Ensemble method* | *Feature importance* | *Bagging* | *Random Forest*
-* 2017-12-12: [Gradient Boosting Machine for Regression](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boosting.ipynb)   
+* 2017-12-12: [Gradient Boosting Machine for Regression](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boostingRegression.ipynb)   
    * Key concept: *Boosting* | *Gradient Descent* | *GBRT* 
     
     
