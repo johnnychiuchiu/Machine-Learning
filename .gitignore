@@ -12,3 +12,5 @@ RecommenderSystem/ml-100k/*
 .ipynb_checkpoints
 */.DS_Store
 .DS_Store/*
+*/_data
+
