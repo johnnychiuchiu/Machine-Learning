@@ -24,5 +24,5 @@ project
 
 ## Documentation
 
-* `titanic.ipynb` Jupyter Notebook that contains a walkthrough of the overall process. [[nbviewer]](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/Projects/titanic/src/titanic.ipynb)
+* `titanic.ipynb` Jupyter Notebook that contains a walkthrough of the overall process. [[nbviewer]](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/Projects/titanic/src/titanic.ipynb?flush_cache=true)
 * `titanic.twb` Tableau file that contains the visualization used in the jupyter notebook. 
