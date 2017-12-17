@@ -31,3 +31,6 @@ I will continuously update some reproducible machine learning note in R and Pyth
    * Key concept: *Boosting* | *Cross Entropy* | *Softmax Function*  
 * 2017-12-13: [Gradient Descent](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/gradientDescent.ipynb)   
    * Key concept: *Batch Gradient Descent* | *Stochastic Gradient Descent* 
+* 2017-12-15: [Model Selection Method](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/modelSelection.ipynb)
+   * Key concept: *Cross Validation* | *Out of Bag Estimate* | *Grid Search*
+
