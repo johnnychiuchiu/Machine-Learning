@@ -11,7 +11,7 @@ I will continuously update some reproducible machine learning note in R and Pyth
 * 2017-09-11: [parameter tuning for xgboost](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ExtremeGradientBoosting/xgboost_zillow_home_value.ipynb)
 * 2017-09-19: [Understand Collaborative Filtering From Scratch](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/collaborative_filtering.ipynb)
 * 2017-10-23: [Customer Value calculation using RFM](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)
-* 2017-11-01: [Linear Regression Model Building Guideline](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/LinearRegression/linearRegressionModelBuilding.pdf)
+* 2017-11-01: [Linear Regression Model Building Guideline](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/LinearRegression/linearRegressionModelBuilding.ipynb)
   * Key concept: *Linear Regression* | *Lasso and Ridge* | *Model Diagnostics* | *Model Selection Criterion*
 * 2017-11-09: [Logistic Regression for binary, nominal, and ordinal response](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/LogisticRegression/logisticRegression.ipynb)
   * Key concept: *Logistic Regression* | *Maximum probability classifier* | *Bayes Classifier* | *ROC, AUC*
