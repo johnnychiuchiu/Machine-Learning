@@ -13,4 +13,4 @@ RecommenderSystem/ml-100k/*
 */.DS_Store
 .DS_Store/*
 */_data
-
+*.Rproj
