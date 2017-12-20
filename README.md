@@ -49,7 +49,7 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
    * Boosting | Gradient Descent | GBRT
 * 2017-12-13 `Gradient Boosting Machine for Classificaiton` [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boostingClassification.ipynb)]   
    * Boosting | Cross Entropy | Softmax Function
-* 2017-09-11 | `xgboost parameter tuning` [[jupyter](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ExtremeGradientBoosting/xgboost_zillow_home_value.ipynb)]
+* 2017-09-11 `xgboost parameter tuning` [[jupyter](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ExtremeGradientBoosting/xgboost_zillow_home_value.ipynb)]
 
 **Optimization Method**
 * 2017-12-13 Gradient Descent [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/gradientDescent.ipynb)] 
@@ -60,7 +60,7 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
    * `Cross Validation | Out of Bag Estimate | Grid Search`
 
 **Dimension Reduction**
-* 2017-12-20 Principal Component Analysis [[nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DimensionReduction/PrincipleComponentAnalysis/pca.ipynb)]
+* 2017-12-20 Principal Component Analysis [[jupyter](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/DimensionReduction/PrincipleComponentAnalysis/pca.ipynb)]
    * `pca | eigenvalue & eigenvector`
 
 **Customer Lifetime Value**
