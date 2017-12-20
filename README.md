@@ -52,19 +52,19 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2017-09-11 `xgboost parameter tuning` [[jupyter](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ExtremeGradientBoosting/xgboost_zillow_home_value.ipynb)]
 
 **Optimization Method**
-* 2017-12-13 Gradient Descent [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/gradientDescent.ipynb)] 
-   * `Batch Gradient Descent | Stochastic Gradient Descent`
+* 2017-12-13 `Gradient Descent` [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/gradientDescent.ipynb)] 
+   * Batch Gradient Descent | Stochastic Gradient Descent
 
 **Model Selection Method**
-* 2017-12-15 Model Selection Method [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/modelSelection.ipynb)]
-   * `Cross Validation | Out of Bag Estimate | Grid Search`
+* 2017-12-15 `Model Selection Method` [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/modelSelection.ipynb)]
+   * Cross Validation | Out of Bag Estimate | Grid Search
 
 **Dimension Reduction**
-* 2017-12-20 Principal Component Analysis [[jupyter](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/DimensionReduction/PrincipleComponentAnalysis/pca.ipynb)]
-   * `pca | eigenvalue & eigenvector`
+* 2017-12-20 `Principal Component Analysis` [[jupyter](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/DimensionReduction/PrincipleComponentAnalysis/pca.ipynb)]
+   * pca | eigenvalue & eigenvector
 
 **Customer Lifetime Value**
-* 2017-10-23 Customer Value calculation using RFM [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)]
+* 2017-10-23 `Customer Value calculation using RFM` [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)]
 
 
 ## Pending List
