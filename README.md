@@ -33,4 +33,5 @@ I will continuously update some reproducible machine learning note in R and Pyth
    * Key concept: *Batch Gradient Descent* | *Stochastic Gradient Descent* 
 * 2017-12-15: [Model Selection Method](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/modelSelection.ipynb)
    * Key concept: *Cross Validation* | *Out of Bag Estimate* | *Grid Search*
-
+* 2017-12-20: [Principal Component Analysis](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DimensionReduction/PrincipleComponentAnalysis/pca.ipynb)
+   * Key concept: *pca* | *eigenvalue & eigenvector*
