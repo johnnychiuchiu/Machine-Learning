@@ -7,16 +7,16 @@ I will continuously update some reproducible machine learning note in R and Pyth
 
 
 
-## Projects
+### Projects
 
 A list of end to end machine learning projects. Scopes includes data preprocessing, data visualization, model building, parameter tuning, and result interpretation.
 * **Titanic: Machine Learning from Disaster**: predict what sorts of people were likely to survive from the tragedy. [[folder]](https://github.com/johnnychiuchiu/Machine-Learning/tree/master/Projects/titanic)
 
 ***
 
-## Topics
+### Topics
 
- **Linear Regression**
+**Linear Regression**
 
 
 *  2017-11-1 `Linear Regression Model Building Guideline` [[nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/LinearRegression/linearRegressionModelBuilding.ipynb)] 
