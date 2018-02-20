@@ -5,8 +5,6 @@ I will continuously update some reproducible machine learning note in R and Pyth
 
 ***
 
-
-
 ### Projects
 
 A list of end to end machine learning projects. Scopes includes data preprocessing, data visualization, model building, parameter tuning, and result interpretation.
@@ -72,8 +70,13 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2018-01-06 `Steps to conduct A/B Testings and Caveats`[[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/abtesting.ipynb)] 
    * Hypothesis Testing | Type I error, Type II error, Power | Determining Sample Size 
 
+***
+### Others
+* 2018-2-19 `pandas command note` [[nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/pandas_command_note.ipynb)]
 
-## Pending List
+***
+
+### Pending List
 * 2017-2-23 `Linear Regression non-traditional model building`.
 * 2017-02-19 `Random Forest for classification problems`
 * 2017-03-01 `extreme gradient boosting for classification problems`
