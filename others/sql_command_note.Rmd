@@ -1,0 +1,1108 @@
+---
+title: "SQL Command Note"
+author: "Johnny Chiu"
+date: "12/9/2017"
+output: html_document
+---
+
+# DVD Rental Practice
+
+### Setup
+```{r}
+library(RPostgreSQL)
+con <- dbConnect(dbDriver("PostgreSQL"), host = "localhost", dbname = "dvdrental")
+# list all the table
+dbListTables(con)
+
+# all_cons <- dbListConnections(PostgreSQL())
+# lapply(dbListConnections(PostgreSQL()), dbDisconnect)
+```
+
+### ER diagram of dvdrental
+![](_pic/DVD-Rental-ER-Diagram.png)
+
+```{sql, connection=con}
+select customer_id, first_name, last_name, sum(amount) from
+() as tbl1;
+
+```
+```{sql, connection=con}
+
+select tbl1.customer_id, tbl1.amount, c.first_name, c.last_name from
+customer as c, 
+(select customer_id, sum(amount) as amount
+from payment 
+group by customer_id
+having sum(amount)> 150) as tbl1
+where c.customer_id=tbl1.customer_id
+;
+```
+
+
+# Question, Idea & Solution
+
+---
+
+> ### Get a list of actors with the first name Chris, Cameron, or Cuba.
+
+
+**> idea:**
+Use the ```SELECT``` & ```WHERE``` command to filter out the ideal rows.
+ 
+**> solution:**
+```{sql, connection=con}
+SELECT * from actor where first_name in ('Chris', 'Cameron', 'Cuba.'); 
+```
+
+**> note:**
+
+* `IN` lets you specify a lot of values that you would otherwise join together with an `OR` statement
+* We can test for `NULL` with `IS NULL`. If we want to filter out '<NA>' rows, we can use `IS NOT NULL` in `WHERE`.
+* `WHERE` operators include:
+
+| Operator | Description |
+|:---:|:---|
+| = | Equal |
+| > | Greater than |
+| < | Less than |
+| >= | Greater than or equal |
+| <= | Less than or equal |
+| <> or != | Not equal |
+| AND | Logical operator AND |
+| OR | Logical operator OR |
+
+---
+
+> ### What are the different rental durations that the store allows?
+
+**> idea:**
+Use `DISTINCT` operator together in `SELECT`
+**> solution:**
+```{sql, connection=con}
+select distinct rental_duration from film;
+```
+
+
+---
+
+> ### How many films are rated NC-17? How many are rated PG or PG-13?
+
+**> idea:**
+filter rows from films that are rated "NC-17", and use count command to see how many rows there are.
+If we want to check "How many are rated PG or PG-13?", in the where command, we can use `in` to filter rows that are in `('PG', 'PG-13')`
+
+**> solution:**
+```{sql, connection=con}
+select count(*) from film where rating in ('PG','PG-13');
+```
+
+
+---
+
+> ### How many different customers have entries in the rental table?
+
+**> idea:**
+Use distinct to get the unique id from the field `customer_id`, and then combine with `count` command to get the count number.
+
+
+**> solution:**
+```{sql, connection=con}
+select count(distinct customer_id) from rental;
+```
+
+---
+
+> ### What are the IDs of the last 5 customers to return a rental?
+
+**> idea:**
+order the `rental` table by `return_date` in descending order and get the `customer_id` of the first 3 rows
+
+
+**> solution:**
+
+```{sql, connection=con}
+select customer_id, return_date from rental where customer_id=251 order by return_date DESC;
+```
+
+```{sql, connection=con}
+select customer_id, count(*), max(return_date) from rental group by customer_id;
+```
+
+
+```{sql, connection=con}
+select customer_id, return_date from rental where return_date is not null order by return_date DESC limit 5;
+```
+
+**> better solution:**
+Since a customer_id can show up twice in the first five rows. To deduplicated this, we can do the following. Even though the result is the same, but it's a better solution.
+```{sql, connection=con}
+select customer_id, recent_date from (
+  select customer_id, max(return_date) as recent_date from rental where return_date is not null group by customer_id 
+) as tbl1 order by recent_date DESC limit 5;
+```
+
+
+
+**> note:**
+
+* We can add `DESC` after `order by` to get the rows in descending order. If not specify, it will be ascending order.
+* If we want to filter out '<NA>' rows, we can use `IS NOT NULL` in `WHERE`.
+
+
+---
+
+> ### Does the average replacement cost of a film differ by rating?
+
+**> idea:**
+We will want to `group by` rating and calculate the average replacement cost.
+
+**> solution:**
+```{sql, connection=con}
+select rating, avg(replacement_cost) from film group by rating;
+```
+
+
+**> note:**
+
+* All columns except the columns applied with some calculation in the `SELECT` part of the statement have to be in the GROUP BY part, or you'll get an error.
+* The [aggregate function](https://www.postgresql.org/docs/9.5/static/functions-aggregate.html) that can be used with `GROUP BY` include:
+
+| Name | Description |
+|:---:|:---|
+| avg() | Return the average value of the argument |
+| count() | Return a count of the number of rows returned |
+| count(distinct) | Return the count of a number of different values |
+| max() | Return the maximum value |
+| min() | Return the minimum value |
+| sum() | Return the sum |
+| stddev_pop | Return the population standard deviation |
+| stddev(), stddev_samp() | Return the sample standard deviation |
+| var_pop() | Return the population standard variance |
+| variance(), var_samp() | Return the sample variance |
+| array_agg() | input arrays concatenated into array of one higher dimension  |
+| json_agg | aggregates values as a JSON array | 
+
+
+---
+
+> ### Select film title that have "Dragon" in them.
+
+**> idea:**
+Using some command with `where` to filter our title with Dragon in them. It turns out the command we need is `similar to` combining with some wildcards.
+
+
+**> solution:**
+```{sql, connection=con}
+select * from film where title similar to '[C|F]%Dragon%';
+```
+
+
+**> note:**
+
+* `%` : The percent sign represents zero, one, or multiple characters
+* `_` : The underscore represents a single character
+* `'[bsp]%'`: The following SQL statement selects the target value starting with "b", "s", or "p"
+* `'[!bsp]%'`: The following SQL statement selects the target value NOT starting with "b", "s", or "p"
+    * We can also use `NOT LIKE '[bsp]%'`
+* `'[a-c]%'`: The following SQL statement selects the target value starting with "a", "b", or "c"
+* `'[a|c]%'`: denotes alternation (either of two alternatives). match value starting with either "a" or "c".
+* For more matching command, check [[here]](https://www.postgresql.org/docs/9.0/static/functions-matching.html).
+
+---
+
+> ### Which store (store_id) has the most customers whose first name starts with M?
+
+**> idea:**
+We will probably need to filter out customer with 'first_name' starting with M, then group by `store_id`, and then count the distinct `customer_id`. (Actually, since `customer_id` is the primary key of the table, we don't need `distinct`.)
+
+
+**> solution:**
+```{sql, connection=con}
+select store_id, count(distinct customer_id) from customer where first_name similar to 'M%' group by store_id order by count(*) DESC;
+```
+
+---
+
+> ### Are there any customers with the same last name?
+
+**> idea:**
+We will probably want to `group by` `last_name` to check what are the `last_name` that is used ore than once. To do this, we will need to combine with `Having`
+
+**> solution:**
+```{sql, connection=con}
+select last_name, count(*) from customer group by last_name having count(*)>1;
+```
+It turns out that there is no customers with the same last name.
+
+---
+
+> ### Which film (id) has the most actors?
+
+**> idea:**
+To do this, we will need to use `film_actor` table, `group by` `film_id` and count `actor_id`. Also, we'll want to sort by the count value.
+
+**> solution:**
+```{sql, connection=con}
+select film_id, count(actor_id) from film_actor group by film_id order by count(actor_id) DESC;
+```
+
+
+---
+
+> ### What films are actors with ids 129 and 195 in together?
+
+**> idea:**
+What we will need to do is first select films that `actor_id 129`is in. Then, out of those films, we then filter out films that `actor_id 195` is also in. Because we need to do twice, we'll need to use subquery
+
+**> solution:**
+
+```{sql, connection=con}
+select film_id from film_actor where film_id IN (select film_id from film_actor where actor_id=129) and actor_id=195;
+```
+
+
+---
+
+> ### How many actors are in more films than actor id 47? 
+
+**> idea:**
+We'll firstly need to know how many film do actor 47 perform in. We then need to know how many films do each actors perform in. Then, we filter out the actors that performs more films than actor 47.
+
+Having the above table, we then count how many rows in the table.
+
+**> solution:**
+```{sql, connection=con}
+select count(*) from 
+    (Select actor_id, count(*) from film_actor group by actor_id 
+      having 
+          count(*) > (select count(*) from film_actor where actor_id=47)
+    ) tbl1;
+```
+
+**> note:**
+
+* If we want to select from some temporary generated result set, we'll need to give our subquery a name.
+
+
+---
+
+> ### Join the customer and payment tables together with an inner join; select customer id, name, amount, and date and order by customer id. Then join the staff table to them as well to add the staff's name.
+
+**> idea:**
+This is just to practice some command for inner join
+
+**> solution:**
+```{sql, connection=con}
+select * from 
+  staff as s, 
+  (select c.customer_id, c.first_name, c.last_name, p.amount, c.create_date, p.staff_id 
+  from customer as c, payment as p where c.customer_id=p.customer_id 
+  order by customer_id) tbl1 
+where s.staff_id=tbl1.staff_id; 
+```
+```{sql, connection=con}
+SELECT
+ customer.customer_id,
+ customer.first_name customer_first_name,
+ customer.last_name customer_last_name,
+ staff.first_name staff_first_name,
+ staff.last_name staff_last_name,
+ amount,
+ payment_date
+FROM
+ customer
+INNER JOIN payment ON payment.customer_id = customer.customer_id
+INNER JOIN staff ON payment.staff_id = staff.staff_id
+ORDER BY
+ customer.customer_id;
+```
+
+**> note:**
+
+* We can use `WHERE r1.id=r2.id` or `INNER JOIN r2 on r1.id=r2.id` to do a inner join
+* When using `INNER JOIN` and `WHERE` together to filter something, `WHERE` should be used after the `INNER JOIN` command.
+
+---
+
+> ### Create a list of addresses that includes the name of the city instead of an ID number and the name of the country as well.
+
+**> idea:**
+We'll want to do a inner join using address and city, also address and country
+
+**> solution:**
+```{sql, connection=con}
+select 
+  address, 
+  address2,
+  city,
+  country
+from 
+  address as a
+inner join city on a.city_id=city.city_id
+inner join country on city.country_id=country.country_id;
+```
+
+---
+
+> ### Which two actors have been in the most films together?
+
+**> idea:**
+It is a harder problem. To start, we will probably need to get a dataframe with actor_id 1 and actor_id 2 and the film_id. With this dataframe, we can then count how many rows do each of the two actor_id appears together in the dataframe. We can get the count by using `group by`.
+
+**> solution:**
+```{sql, connection=con}
+SELECT a.actor_id, b.actor_id, count(*)
+FROM film_actor a, film_actor b -- join the table to itself
+WHERE a.film_id=b.film_id -- on the film id
+      AND a.actor_id > b.actor_id -- avoid duplicates and matching to the same actor
+GROUP BY a.actor_id, b.actor_id
+ORDER BY count(*) DESC;
+```
+
+
+---
+
+> ### Get a list of the names of customers who have spent more than $150, along with their total spending.
+
+**> idea:**
+We can firstly get the `customer_id` that has spent more than $150 using payment. Then we join the result with the `customer` t o get the name.
+
+We can also firstly join `customer` to get all the names and then `group by` to filter out all the customers with payment over $150. The first version is more efficient, since it filter out before doing the join.
+
+**> solution:**
+```{sql, connection=con}
+select c.first_name, c.last_name, c.customer_id, tbl1.sum
+from customer as c,
+  (select 
+    p.customer_id, sum(amount) 
+  from payment as p 
+  group by customer_id having sum(amount) > 150) tbl1
+where c.customer_id = tbl1.customer_id
+order by sum DESC;
+```
+
+```{sql, connection=con}
+select 
+  c.first_name,
+  c.last_name,
+  sum(amount)
+from 
+  customer as c,
+  payment as p
+where 
+  c.customer_id=p.customer_id 
+group by  
+  c.first_name, c.last_name
+having 
+  sum(amount) > 150
+order by 
+  sum(amount) DESC;
+```
+
+
+--- 
+---
+---
+
+# Leetcode SQL Problems
+
+> [Problem 1](https://leetcode.com/problems/department-highest-salary/description/)
+
+**> Description:**
+
+The Employee table holds all employees. Every employee has an Id, a salary, and there is also a column for the department Id.
+
+```
++----+-------+--------+--------------+
+| Id | Name  | Salary | DepartmentId |
++----+-------+--------+--------------+
+| 1  | Joe   | 70000  | 1            |
+| 2  | Henry | 80000  | 2            |
+| 3  | Sam   | 60000  | 2            |
+| 4  | Max   | 90000  | 1            |
++----+-------+--------+--------------+
+```
+The Department table holds all departments of the company.
+
+```
++----+----------+
+| Id | Name     |
++----+----------+
+| 1  | IT       |
+| 2  | Sales    |
++----+----------+
+```
+Write a SQL query to find employees who have the highest salary in each of the departments. For the above tables, Max has the highest salary in the IT department and Henry has the highest salary in the Sales department.
+
+```
++------------+----------+--------+
+| Department | Employee | Salary |
++------------+----------+--------+
+| IT         | Max      | 90000  |
+| Sales      | Henry    | 80000  |
++------------+----------+--------+
+```
+
+**> idea:**
+
+1. We would firstly want to get the employee with the max salary for each department from `Employee`
+2. then join with the `Department` table.
+
+The first step is tricky, since we can not simply group by and select the max. What we should do is left join the `Employee` table with itself by `DepartmentId` with the condition the `Salary` of the right table is larger than that of the left table. Therefore, any Employee who has the highest `Salary` within each department will have `NULL` value in its right table, since it can not find any Employee whose `Salary` is higher. Then the first step is done.
+
+We then join the `Department` table with it.
+
+
+**> solution:**
+```
+# Write your MySQL query statement below
+select 
+    d.Name as Department,
+    tbl1.Name as Employee,
+    tbl1.Salary
+from 
+    Department as d,    
+    (select 
+        e1.Name,
+        e1.Salary,
+        e1.DepartmentId
+    from
+        Employee as e1
+    left join 
+        Employee as e2 on e1.DepartmentId=e2.DepartmentId
+    and 
+        e2.Salary > e1.Salary
+    where 
+        e2.Salary is NULL) tbl1
+where         
+    d.Id=tbl1.DepartmentId;
+```
+
+```
+select 
+	d.Name as Department,
+	e1.Name as Employee, 
+	e1.Salary 	
+from Employee as e1
+left join Employee as e2 
+on 
+	e1.DepartmentId= e2.DepartmentId and
+	e2.Salary > e1.Salary
+inner join Department as d on d.Id = e1.DepartmentId		
+where e2.Salary is NULL;
+```
+
+---
+
+> [Problem 2](https://leetcode.com/problems/rising-temperature/description/)
+
+**> Description:**
+
+Given a Weather table, write a SQL query to find all dates' Ids with higher temperature compared to its previous (yesterday's) dates.
+```
++---------+------------+------------------+
+| Id(INT) | Date(DATE) | Temperature(INT) |
++---------+------------+------------------+
+|       1 | 2015-01-01 |               10 |
+|       2 | 2015-01-02 |               25 |
+|       3 | 2015-01-03 |               20 |
+|       4 | 2015-01-04 |               30 |
++---------+------------+------------------+
+```
+For example, return the following Ids for the above Weather table:
+```
++----+
+| Id |
++----+
+|  2 |
+|  4 |
++----+
+```
+
+**> idea:**
+
+We certain want to join the `Weather` to itself using some conditions.
+The condition we want to use is 
+1. `Temperature` of the right table is larger then that from left
+2. `Date` of the right table minus `Date` from the left table is 1
+
+We also need to select the `Id` from the right table, since it is the `Id` requested by the question.
+
+**> solution:**
+
+```
+# Write your MySQL query statement below
+select w2.Id 
+from Weather as w1, Weather as w2
+where w1.Temperature < w2.Temperature and TO_DAYS(w2.DATE)-TO_DAYS(w1.DATE)=1;
+```
+
+**> note:**
+We need to use `TO_DAYS` that converts a date into numeric days. [[Link]](https://www.w3schools.com/sql/func_mysql_to_days.asp)
+
+---
+
+> [Problem 3](https://leetcode.com/problems/delete-duplicate-emails/description/)
+
+**> Description:**
+Write a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.
+```
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
+| 3  | john@example.com |
++----+------------------+
+```
+Id is the primary key column for this table.
+For example, after running your query, the above Person table should have the following rows:
+```
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
++----+------------------+
+```
+
+**> Idea:**
+
+Take the table in the example
+```
+Id | Email
+
+1 | john@example.com
+
+2 | bob@example.com
+
+3 | john@example.com
+```
+
+Join the table on itself by the Email and you'll get:
+`FROM Person p1, Person p2 WHERE p1.Email = p2.Email`
+
+```
+p1.Id | p1.Email | p2.Id | p2.Email
+
+1	| john@example.com	| 1	| john@example.com
+
+3	| john@example.com | 1	| john@example.com
+
+2	| bob@example.com	| 2	| bob@example.com
+
+1	| john@example.com	| 3	| john@example.com
+
+3	| john@example.com	| 3	| john@example.com
+```
+
+From this results filter the records that have p1.Id>p2.ID, in this case you'll get just one record:
+`AND p1.Id > p2.Id`
+
+```
+p1.Id | p1.Email | p2.Id | p2.Email
+
+3	| john@example.com	| 1	| john@example.com
+```
+
+This is the record we need to delete, and by saying
+`DELETE p1`
+in this multiple-table syntax, only matching rows from the tables listed before the FROM clause are deleted, in this case just
+```
+p1.Id | p1.Email
+
+3	| john@example.com
+```
+
+will be deleted
+
+
+**> Solution:**
+```
+DELETE p1
+FROM Person p1, Person p2
+WHERE p1.Email = p2.Email AND
+p1.Id > p2.Id
+```
+
+--- 
+---
+---
+
+# World Population
+
+### Setup
+
+```{r}
+library(RMySQL)
+con_mysql <- dbConnect(MySQL(),
+         user="root", password="",
+         dbname="world", host="localhost")
+dbListTables(con_mysql)
+```
+
+
+```{sql, connection=con_mysql}
+select * from city;
+```
+```{sql, connection=con_mysql}
+select * from country;
+```
+
+```{sql, connection=con_mysql}
+select * from countrylanguage;
+```
+
+> ### Find the largest country in terms of population in each continent
+
+```{sql, connection=con_mysql}
+select a1.Continent, a1.Name, a1.population
+from (
+  select cn.Continent, cn.Name, tbl1.CountryCode, tbl1.population
+  from country as cn, (
+    select ci.CountryCode, sum(ci.Population) as population
+    from city as ci
+    group by ci.CountryCode 
+  )as tbl1
+  where cn.Code=tbl1.CountryCode
+) as a1
+left join (
+    select cn.Continent, cn.Name, tbl1.CountryCode, tbl1.population
+  from country as cn, (
+    select ci.CountryCode, sum(ci.Population) as population
+    from city as ci
+    group by ci.CountryCode 
+  )as tbl1
+  where cn.Code=tbl1.CountryCode
+) as a2 on a1.Continent=a2.Continent and a2.population > a1.population
+where a2.population is NULL
+order by population desc;
+```
+
+```{r}
+city %>% 
+  group_by(CountryCode) %>%
+  summarise(population=sum(Population)) %>%
+  rename(Code = CountryCode) %>%
+  merge(country, by='Code') %>%
+  select(Continent, Code, population) %>%
+  group_by(Continent) %>%
+  top_n(1, population)
+```
+
+
+
+**> idea:**
+1. First have a table with column `continent, country, population`
+2. Get the country with the largest population for each continent from the table.
+
+The second part is tricky. We can not just `group by` continent and then select the max country by population. It's not that straight forward. 
+
+We probably need to join the table by itself and then use some condition to get the conutry with the largest population. It's actually the same question as the problem1 from leetcode above.
+
+**> solution:**
+```{sql, connection=con_mysql}
+select * from city;
+```
+
+```{sql, connection=con_mysql}
+select 
+    cn.Continent,
+    cn.Name,
+    sum(ci.Population) as population
+from 
+  city as ci
+inner join country as cn on ci.CountryCode=cn.Code
+group by
+  ci.CountryCode
+order by
+  cn.Continent,
+  population DESC;
+```
+
+
+```{sql, connection=con_mysql}
+select 
+  tbl1.Continent,
+  tbl1.Name,
+  tbl1.population
+from 
+  (select 
+      cn.Continent,
+      cn.Name,
+      sum(ci.Population) as population
+  from 
+    city as ci
+  inner join country as cn on ci.CountryCode=cn.Code
+  group by
+    ci.CountryCode
+  order by
+    cn.Continent,
+    population DESC) as tbl1
+left join
+   (select 
+        cn.Continent,
+        cn.Name,
+        sum(ci.Population) as population
+    from 
+      city as ci
+    inner join country as cn on ci.CountryCode=cn.Code
+    group by
+      ci.CountryCode
+    order by
+      cn.Continent,
+      population DESC) as tbl2 
+  on 
+    tbl1.Continent=tbl2.Continent and
+    tbl2.population > tbl1.population
+where 
+  tbl2.population is NULL;
+```
+
+**> note:**
+
+* `inner join` should be before `group by`
+
+
+> ### Find the largest country (by area) in each continent, show the continent, the name and the area:
+
+**> idea:**
+1. We will need a table with column `continent, name, area`.
+2. We then want to get the largest country by area for each continent. 
+
+
+**> solution:**
+```{sql, connection=con_mysql}
+select * from country;
+```
+
+```{sql, connection=con_mysql}
+select 
+  cn1.Continent, cn1.Name, cn1.SurfaceArea
+from
+  country as cn1
+left join
+  country as cn2 
+on 
+  cn1.Continent = cn2.Continent and -- for every continent in cn1, it will join with the same continent in cn2.
+  cn2.SurfaceArea > cn1.SurfaceArea -- but we don't want to join country in each continent. We only want to join with the country which SurfaceArea is larger than the country in the left table. 
+where 
+  cn2.SurfaceArea is NULL; -- If the country in cn1 is the largest, then it will have no country from the right table to join. Therefore, it is the country we want. 
+```
+
+```{sql, connection=con_mysql}
+-- https://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
+-- correlated subquery
+SELECT -- not sure why -- ???
+  Continent, Name, SurfaceArea
+FROM country x
+WHERE SurfaceArea >= ALL
+    (SELECT SurfaceArea FROM country y
+    WHERE y.continent=x.continent
+    AND SurfaceArea>0);
+```
+
+
+
+> ### List each continent and the name of the country that comes first alphabetically.
+
+**> idea:**
+1. we need to have a table have columns `continent, NAME`
+2. keep only the country with its name comes first alphabetically
+
+**> solution:**
+```{sql, connection=con_mysql}
+select 
+  cn1.Continent,
+  cn1.Name 
+from 
+  country as cn1
+left join
+  country as cn2
+on 
+  cn1.Continent=cn2.Continent and
+  cn2.Name < cn1.Name
+where 
+  cn2.Name is NULL;
+```
+```{sql, connection=con_mysql}
+SELECT Continent, Name
+FROM country x
+WHERE Name <= ALL(SELECT Name FROM country y WHERE y.Continent = x.Continent)
+```
+
+
+
+> ### Find the continents where all countries have a population <= 25000000. Then find the names of the countries associated with these continents. Show name, continent and population.
+
+**> idea:**
+1. we need a table with columns `Continent, country, population`
+
+**> solution:**
+```{sql, connection=con_mysql}
+-- ???
+SELECT Name, Continent, population
+FROM country x
+WHERE 25000000  > ALL(SELECT population FROM country y WHERE x.Continent = y.Continent AND y.population > 0)
+
+```
+
+
+> ### Which countries have a GDP greater than every country in Europe? [Give the name only.] (Some countries may have NULL gdp values)
+
+**> idea:**
+1. select country name and then filter the rows using ALL command, continent!='Europe' and gdp!=NULL
+
+
+**> solution:**
+```{sql, connection=con_mysql}
+select Name
+from country
+where 
+  GNP > ALL(select GNP from country where Continent="Europe" and GNP is NOT NULL) and 
+  Continent!='Europe' and 
+  GNP is NOT NULL;
+```
+
+---
+---
+---
+
+# Database homework
+
+### Setup
+```{r}
+library(RPostgreSQL)
+con_uni <- dbConnect(dbDriver("PostgreSQL"), host = "localhost", dbname = "university")
+# list all the table
+dbListTables(con_uni)
+
+# all_cons <- dbListConnections(PostgreSQL())
+# lapply(dbListConnections(PostgreSQL()), dbDisconnect)
+```
+
+![](_pic/uni_schema.png)
+
+
+> ### Print the names of professors who work in departments that have more than 15 PhD students.
+
+**> idea:**
+
+
+**> solution:**
+```{sql, connection=con_uni}
+select prof.pname, dept.numphds
+from dept
+left join prof on prof.dname = dept.dname
+where numphds > 15
+order by numphds desc;
+```
+
+**> note:**
+
+
+> ### Print the name(s) of the youngest student(s).
+
+**> idea:**
+
+
+**> solution:**
+```{sql, connection=con_uni}
+select sname
+from student
+where age = (select min(age) from student);
+```
+
+**> note:**
+
+> ### For each Mathematics class, print the cno, sectno, and the number of enrolled students with GPAs below 3.
+
+**> idea:**
+
+1. firstly, I want to get how many student are with gpa over 3
+2. merge the result with enroll to get the courses that these students enroll in. I use inner join because if the student is not enrolled in any courses, I don't want them to be in the result.
+3. filter by dname and gpa(turns out that we need to put gpa>3 here)
+4. groupby cno, sectno(only because we want to show the result) and count the number of each course.
+
+Better
+1. All the information are in student and enroll table, so I can started out merge them together
+2. and then filter out using condition dname and gpa
+3. groupby and count
+
+
+**> solution:**
+```{sql, connection=con_uni}
+select tbl1.cno, tbl1.sectno,count(*) as count
+from
+  (select s.sid, e.cno, e.sectno 
+  from student as s 
+  inner join enroll as e on s.sid=e.sid
+  where e.dname='Mathematics' and s.gpa <3) as tbl1
+group by tbl1.cno, tbl1.sectno
+order by count desc;
+```
+
+```{sql, connection=con_uni}
+SELECT e.cno, e.sectno, count(*)
+FROM enroll e, student st
+WHERE e.dname='Mathematics' AND st.sid = e.sid AND st.gpa < 3
+GROUP BY e.cno, e.sectno
+```
+
+
+**> note:**
+
+> ### Print the course names, course numbers and section numbers of all classes with more than 3 female students enrolled in them.
+
+**> idea:**
+
+1. The information I want are in three tables, which are course, enroll and student.
+2. I also want to know what are the course numbers that with more than 3 females students enrolled in them
+3. when joining tables, make sure we merge the table using all the keys.
+
+**> solution:**
+```{sql, connection=con_uni}
+select c.cname, c.cno, e.sectno, c.dname,count(*)
+from course as c, enroll as e, student as s
+where c.cno=e.cno and s.sid=e.sid and c.dname=e.dname and s.sex='f'
+group by c.cname, c.cno, e.sectno, c.dname
+having count(*) > 3;
+```
+
+**> note:**
+
+> ### Print the names of professors in departments where those departments have one or more majors who are under 18 years old.
+
+**> idea:**
+
+1. first we know that all the information we want are in prof, major, student table
+2. we want to know what are the departments that have at least one majors that is under 18 years old
+
+**> solution:**
+```{sql, connection=con_uni}
+select p.pname, p.dname
+from prof as p 
+where p.dname in (
+  select m.dname
+  from major as m, student as s
+  where m.sid=s.sid and s.age<18
+);
+```
+
+
+**> note:**
+
+> ### Print the names and majors of students who are taking more than one Intro course. (Hint: You’ll need to use the “like” predicate and the string matching character in your relational algebra, as well as your query.)
+
+**> idea:**
+
+1. all the information I want are in course, enroll, major, student
+2. first get these student ids.
+3. joing stdent with major and keep id that are generated in step 2.
+
+
+**> solution:**
+```{sql, connection=con_uni}
+select s.sname, m.dname 
+from student as s, major as m 
+where s.sid=m.sid and s.sid in (
+select e.sid
+from enroll e, course c
+where e.cno=c.cno and c.cname like '%Intro%'
+group by sid
+having count(sid)>1
+);
+```
+
+**> note:**
+
+> ### For those departments that have no majors taking a College Geometry course, print the department name and the number of PhD students in the department.
+
+**> idea:**
+1. All the information are in tables enroll, course, dept
+2. I want to know what are these departments. What are the departments that do not have any students taking Geometry course. I don't want the department that any of the student taking the Geometry course.
+3. After having this, I will filter out the dept.
+
+take all the sid that has taken college geometry, check what their department name is, and then use those department as filter. We don't want these department, so I use not in from the department table.
+
+**> solution:**
+
+```{sql, connection=con_uni}
+select distinct dept.dname, dept.numphds
+from dept 
+where dept.dname not in (
+  select e.dname
+  from enroll as e
+  where cno in (select cno from course where cname like 'College Geometry%')
+); -- not correct
+```
+```{sql, connection=con_uni}
+select dname, numphds from dept where dname not in (
+	select dname from major where sid in (
+		select sid from enroll where cno in (
+			select cno from course where cname like '%College Geometry%'
+		)
+	)
+);
+```
+
+```{sql, connection=con_uni}
+SELECT DISTINCT d.dname, d.numphds
+FROM dept d EXCEPT (
+SELECT DISTINCT d.dname, d.numphds
+FROM dept d, enroll e, course c, major m
+WHERE m.sid=e.sid AND m.dname = d.dname AND e.cno = c.cno AND c.cname LIKE 'College Geometry%')
+```
+
+**> note:**
+
+> ### Print the names of students who are majoring in both Computer Science and Sanitary Engineering.
+
+
+
+**> idea:**
+1. all the information I needed are in major and student
+2. first get those sid from major 
+3. merge with student to get name
+
+**> solution:**
+```{sql, connection=con_uni}
+select s.sid, s.sname
+from student as s, 
+  (select distinct m1.sid
+  from major as m1
+  left join major as m2 on m1.sid=m2.sid and m1.dname !=m2.dname 
+  where m2.sid is NOT NULL and m1.dname='Computer Science' and m2.dname='Sanitary Engineering') as tbl1
+where s.sid=tbl1.sid;
+```
+
+**> note:**
+
+> ### Print the absolute difference in average age between Computer Science majors and Mathematics majors.
+
+**> idea:**
+
+
+**> solution:**
+```{sql, connection=con_uni}
+
+```
+
+**> note:**
+
+> ### For each department that has fewer than ten male majors, print the name of the department and the average GPA of its majors.
+
+**> idea:**
+
+
+**> solution:**
+```{sql, connection=con_uni}
+
+```
+
+**> note:**
+
+---
+# Reference
+* [SQL Workshop](https://github.com/nuitrcs/databases_workshop/tree/master/sql)
+* [sqlzoo-solutions](https://github.com/jisaw/sqlzoo-solutions/blob/master/select-in-select.sql)
