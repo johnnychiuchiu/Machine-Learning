@@ -72,7 +72,9 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 
 ***
 ### Others
+* 2017-12-9 `SQL command note` [[Rmd](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/others/sql_command_note.Rmd)]
 * 2018-2-19 `pandas command note` [[nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/pandas_command_note.ipynb)]
+
 
 ***
 
