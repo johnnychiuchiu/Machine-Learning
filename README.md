@@ -65,6 +65,8 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 
 **Customer Lifetime Value**
 * 2017-10-23 `Customer Value calculation using RFM` [[nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)]
+* 2018-02-27 `Calculating Customer Lifetime Value` [[nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/CustomerLifetimeValue.ipynb)]
+   * Simple retention model | General retention model | Survival Analysis | Markov Chain, Migration Model
 
 **A/B Testing**
 * 2018-01-06 `Steps to conduct A/B Testings and Caveats`[[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/abtesting.ipynb)] 
