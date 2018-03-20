@@ -45,9 +45,9 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2017-12-11 `Bagging and Random Forest` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Bagging/randomForest.ipynb)]
    * Ensemble method | Feature importance | Bagging | Random Forest
 * 2017-12-12 `Gradient Boosting Machine for Regression` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boostingRegression.ipynb)]
-   * Boosting | Gradient Descent | GBRT
+   * Boosting | Gradient Descent | GBRT | Pseudo Residual | MLE
 * 2017-12-13 `Gradient Boosting Machine for Classificaiton` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boostingClassification.ipynb)]   
-   * Boosting | Cross Entropy | Softmax Function
+   * Boosting | Cross Entropy | Softmax Function 
 * 2017-09-11 `xgboost parameter tuning` [[python jupyter](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ExtremeGradientBoosting/xgboost_zillow_home_value.ipynb)]
 
 **Optimization Method**
