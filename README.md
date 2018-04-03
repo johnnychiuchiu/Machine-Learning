@@ -11,6 +11,8 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * **Titanic: Machine Learning from Disaster**: predict what sorts of people were likely to survive from the tragedy. [[folder]](https://github.com/johnnychiuchiu/Machine-Learning/tree/master/Projects/titanic)
 * **Music Recommender**: build up an end-to-end music recommender application from scratch. [[folder](https://github.com/johnnychiuchiu/Music-Recommender)]
 * **Airbnb New User Bookings**: The goal of this project is to help Airbnb predict which country a new user will make his or her first booking. [[folder](https://github.com/bkennedy04/msia420_airbnb_prediction)]
+* **Forecasting Energy Consumption**: Predict energy consumption for 200+ buildings using time series data [[folder](https://github.com/johnnychiuchiu/Forecasting-Energy-Consumption)]
+
 
 ***
 
