@@ -19,7 +19,6 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 ### Topics
 
 **Linear Regression**
-
 *  2017-11-1 `Linear Regression Model Building Guideline` [[R nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/LinearRegression/linearRegressionModelBuilding.ipynb)] 
     * Linear Regression | Lasso and Ridge | Model Diagnostics | Model Selection Criterion
 
@@ -62,7 +61,7 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 
 **Dimension Reduction**
 * 2017-12-20 `Principal Component Analysis` [[python jupyter](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/DimensionReduction/PrincipleComponentAnalysis/pca.ipynb)]
-   * pca | eigenvalue & eigenvector
+   * PCA | eigenvalue & eigenvector
 
 **Customer Lifetime Value**
 * 2017-10-23 `Customer Value calculation using RFM` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)]
@@ -77,11 +76,16 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2018-03-19 `KNN-Based Modeling`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/knn/KNN.ipynb?flush_cache=true)]
    * K-Nearest Neighbors | Local polynomial regression | kernel weighting function
 
+**Naive Bayes**
+
+* 2018-04-08 `Text Classification using Naive Bayes`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/NaiveBayes/naiveBayesTextClassification.ipynb)]
+   * Bernoulli Naive Bayes | Multinomial Naive Bayes | Laplace Smoothing
+
 ***
 ### Others
 * 2017-12-9 `SQL command note` [[Rmd](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/others/sql_command_note.Rmd)]
-* 2018-2-19 `pandas command note` [[nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/pandas_command_note.ipynb)]
-
+* 2018-02-19 `pandas command note` [[nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/pandas_command_note.ipynb)]
+* 2018-04-08 `HDFS command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/hdfs_command_note.ipynb)]
 
 ***
 
