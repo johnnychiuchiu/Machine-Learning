@@ -21,6 +21,8 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 **Deep Learning**
 * 2018-04-14 `Use Transfer Learning to identify upright or sideways of images`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/transferLearning.ipynb)]
    * Transfer Learning | keras | data augmentation
+* 2018-04-14 `Recognizing hand-written digits using neural network`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/mnist.ipynb?flush_cache=true)]
+   * Neural Network | MNIST dataset
 
 **Naive Bayes**
 
