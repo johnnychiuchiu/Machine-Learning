@@ -18,6 +18,57 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 
 ### Topics
 
+**Deep Learning**
+* 2018-04-14 `Use Transfer Learning to identify upright or sideways of images`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/transferLearning.ipynb)]
+   * Transfer Learning | keras | data augmentation
+
+**Naive Bayes**
+
+* 2018-04-08 `Text Classification using Naive Bayes`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/NaiveBayes/naiveBayesTextClassification.ipynb)]
+   * Bernoulli Naive Bayes | Multinomial Naive Bayes | Laplace Smoothing
+
+**KNN Based Modeling**
+* 2018-03-19 `KNN-Based Modeling`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/knn/KNN.ipynb?flush_cache=true)]
+   * K-Nearest Neighbors | Local polynomial regression | kernel weighting function
+
+**A/B Testing**
+* 2018-01-06 `Steps to conduct A/B Testings and Caveats`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/abtesting.ipynb)] 
+   * Hypothesis Testing | Type I error, Type II error, Power | Determining Sample Size 
+
+**Customer Lifetime Value**
+* 2017-10-23 `Customer Value calculation using RFM` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)]
+* 2018-02-27 `Calculating Customer Lifetime Value` [[R nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/CustomerLifetimeValue.ipynb)]
+   * Simple retention model | General retention model | Survival Analysis | Markov Chain, Migration Model
+
+**Dimension Reduction**
+* 2017-12-20 `Principal Component Analysis` [[python jupyter](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/DimensionReduction/PrincipleComponentAnalysis/pca.ipynb)]
+   * PCA | eigenvalue & eigenvector
+
+**Optimization Method**
+* 2017-12-13 `Gradient Descent` [[R nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/gradientDescent.ipynb)] 
+   * Batch Gradient Descent | Stochastic Gradient Descent
+
+**Model Selection Method**
+* 2017-12-15 `Model Selection Method` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/modelSelection.ipynb)]
+   * Cross Validation | Out of Bag Estimate | Grid Search
+
+**Tree based models**
+* 2017-12-11 `Decision Tree Introduction` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/decisionTree.ipynb)]
+   * Information Gain | Impurity measure | Entropy | Gini Index | Tree Pruning concept
+* 2017-12-11 `Bagging and Random Forest` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Bagging/randomForest.ipynb)]
+   * Ensemble method | Feature importance | Bagging | Random Forest
+* 2017-12-12 `Gradient Boosting Machine for Regression` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boostingRegression.ipynb)]
+   * Boosting | Gradient Descent | GBRT | Pseudo Residual | MLE
+* 2017-12-13 `Gradient Boosting Machine for Classificaiton` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boostingClassification.ipynb)]   
+   * Boosting | Cross Entropy | Softmax Function 
+* 2017-09-11 `xgboost parameter tuning` [[python jupyter](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ExtremeGradientBoosting/xgboost_zillow_home_value.ipynb)]
+
+**Recommender system**
+* 2017-09-19 `Understand Collaborative Filtering From Scratch` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/collaborative_filtering.ipynb)]
+    * User-User CF | Item-Item CF
+* 2017-11-24 `Build Up My Own Recommended Song Playlist from Scratch` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/latentFactorModel.ipynb)]
+   * Latent Factor Model | Alternating Least Squares | Collaborative Filtering
+
 **Linear Regression**
 *  2017-11-1 `Linear Regression Model Building Guideline` [[R nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/LinearRegression/linearRegressionModelBuilding.ipynb)] 
     * Linear Regression | Lasso and Ridge | Model Diagnostics | Model Selection Criterion
@@ -34,52 +85,8 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
  * 2017-11-18 `Discriminant Analysis` [[R nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DiscriminantAnalysis/discriminantAnalysis.ipynb)]
    * LDA | QDA | Bayes Classifier
 
-**Recommender system**
-* 2017-09-19 `Understand Collaborative Filtering From Scratch` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/collaborative_filtering.ipynb)]
-    * User-User CF | Item-Item CF
-* 2017-11-24 `Build Up My Own Recommended Song Playlist from Scratch` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/latentFactorModel.ipynb)]
-   * Latent Factor Model | Alternating Least Squares | Collaborative Filtering
 
-**Tree based models**
-* 2017-12-11 `Decision Tree Introduction` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/decisionTree.ipynb)]
-   * Information Gain | Impurity measure | Entropy | Gini Index | Tree Pruning concept
-* 2017-12-11 `Bagging and Random Forest` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Bagging/randomForest.ipynb)]
-   * Ensemble method | Feature importance | Bagging | Random Forest
-* 2017-12-12 `Gradient Boosting Machine for Regression` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boostingRegression.ipynb)]
-   * Boosting | Gradient Descent | GBRT | Pseudo Residual | MLE
-* 2017-12-13 `Gradient Boosting Machine for Classificaiton` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/Boosting/boostingClassification.ipynb)]   
-   * Boosting | Cross Entropy | Softmax Function 
-* 2017-09-11 `xgboost parameter tuning` [[python jupyter](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ExtremeGradientBoosting/xgboost_zillow_home_value.ipynb)]
 
-**Optimization Method**
-* 2017-12-13 `Gradient Descent` [[R nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/gradientDescent.ipynb)] 
-   * Batch Gradient Descent | Stochastic Gradient Descent
-
-**Model Selection Method**
-* 2017-12-15 `Model Selection Method` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/modelSelection.ipynb)]
-   * Cross Validation | Out of Bag Estimate | Grid Search
-
-**Dimension Reduction**
-* 2017-12-20 `Principal Component Analysis` [[python jupyter](https://github.com/johnnychiuchiu/Machine-Learning/blob/master/DimensionReduction/PrincipleComponentAnalysis/pca.ipynb)]
-   * PCA | eigenvalue & eigenvector
-
-**Customer Lifetime Value**
-* 2017-10-23 `Customer Value calculation using RFM` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)]
-* 2018-02-27 `Calculating Customer Lifetime Value` [[R nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/CustomerLifetimeValue.ipynb)]
-   * Simple retention model | General retention model | Survival Analysis | Markov Chain, Migration Model
-
-**A/B Testing**
-* 2018-01-06 `Steps to conduct A/B Testings and Caveats`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/abtesting.ipynb)] 
-   * Hypothesis Testing | Type I error, Type II error, Power | Determining Sample Size 
-
-**KNN Based Modeling**
-* 2018-03-19 `KNN-Based Modeling`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/knn/KNN.ipynb?flush_cache=true)]
-   * K-Nearest Neighbors | Local polynomial regression | kernel weighting function
-
-**Naive Bayes**
-
-* 2018-04-08 `Text Classification using Naive Bayes`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/NaiveBayes/naiveBayesTextClassification.ipynb)]
-   * Bernoulli Naive Bayes | Multinomial Naive Bayes | Laplace Smoothing
 
 ***
 ### Others
