@@ -1,3 +1,4 @@
+*/data/*
 .Rproj.user
 .Rhistory
 .RData
@@ -12,5 +13,5 @@ RecommenderSystem/ml-100k/*
 .ipynb_checkpoints
 */.DS_Store
 .DS_Store/*
-*/_data
+*/_data/*
 *.Rproj
