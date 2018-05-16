@@ -1,3 +1,5 @@
+*/files/*
+*.csv
 */data/*
 .Rproj.user
 .Rhistory
