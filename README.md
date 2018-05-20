@@ -23,6 +23,9 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
    * Transfer Learning | keras | data augmentation
 * 2018-04-14 `Recognizing hand-written digits using neural network`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/mnist.ipynb?flush_cache=true)]
    * Neural Network | MNIST dataset
+* 2018-05-15 `Convolutional Neural Network using Keras`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/cnn/CNN.ipynb)]
+   * Filter | Padding | Stride | Pooling | Cifer10 dataset | VGG16
+
 
 **Naive Bayes**
 
