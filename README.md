@@ -101,6 +101,11 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2018-02-19 `pandas command note` [[nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/pandas_command_note.ipynb)]
 * 2018-04-08 `HDFS command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/hdfs_command_note.ipynb)]
 * 2018-05-20 `Spark command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/Spark_commend_note.ipynb?flush_cache=true)]
+* 2018-06-01 `linux command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/linux_command_note.ipynb)]
+* 2018-06-01 `python plot note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/python_plots.ipynb)]
+* 2018-06-01 `python command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/python_command_note.ipynb)]
+
+
 
 ***
 
