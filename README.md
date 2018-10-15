@@ -109,6 +109,7 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2018-06-10 `neo4j- Cypher command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/neo4j_command_note.ipynb?flush_cache=true)]
 * 2018-06-10 `hbase command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/hbase_command_note.ipynb?flush_cache=true)]
 * 2018-06-14 `pig command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/pig_command_note.ipynb)]
+* 2018-10-15 `regular expression note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/regular_expression_note.ipynb)]
 
 
 
