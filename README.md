@@ -18,6 +18,10 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 
 ### Topics
 
+**Causal Inference**
+* 2018-10-20 `Inferring Causal Effects from Observational Data`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/Causal/InferringCausalEffects.ipynb)]
+  * Propensity Score Matching | MatchIt(library) | CausalImpact(library)
+
 **Deep Learning**
 * 2018-04-14 `Use Transfer Learning to identify upright or sideways of images`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/transferLearning.ipynb)]
    * Transfer Learning | keras | data augmentation
