@@ -31,10 +31,12 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
    * Filter | Padding | Stride | Pooling | Cifer10 dataset | VGG16
 
 
-**Naive Bayes**
+**Text Analytics**
 
-* 2018-04-08 `Text Classification using Naive Bayes`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/NaiveBayes/naiveBayesTextClassification.ipynb)]
+* 2018-04-08 `Text Classification using Naive Bayes`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/TextAnalytics/naiveBayesTextClassification.ipynb)]
    * Bernoulli Naive Bayes | Multinomial Naive Bayes | Laplace Smoothing
+* 2018-12-29 `Sentiment Analysis for Movie Reviews`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/TextAnalytics/SentimentAnalysis.ipynb)]
+   * NLP Process | N-gram | TF-IDF | Text Preprocessing | POS Tagging
 
 **KNN Based Modeling**
 * 2018-03-19 `KNN-Based Modeling`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/knn/KNN.ipynb?flush_cache=true)]
