@@ -60,6 +60,8 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 **Optimization Method**
 * 2017-12-13 `Gradient Descent` [[R nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/gradientDescent.ipynb)] 
    * Batch Gradient Descent | Stochastic Gradient Descent
+* 2019-01-25 `Optimization and Heuristics` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/Optimization%20and%20Heuristics.ipynb)] 
+   * Linear Programming | Piecewise Linear Programming | Shadow Price        
 
 **Model Selection Method**
 * 2017-12-15 `Model Selection Method` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/modelSelection.ipynb)]
