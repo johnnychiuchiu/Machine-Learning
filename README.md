@@ -18,9 +18,11 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 
 ### Topics
 
-**Causal Inference**
+**Design of experiments for Causal Inference**
 * 2018-10-20 `Inferring Causal Effects from Observational Data`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/Causal/InferringCausalEffects.ipynb)]
   * Propensity Score Matching | MatchIt(library) | CausalImpact(library)
+* 2018-01-06 `Steps to conduct A/B Testings and Caveats`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/abtesting.ipynb)] 
+   * Hypothesis Testing | Type I error, Type II error, Power | Determining Sample Size 
 
 **Deep Learning**
 * 2018-04-14 `Use Transfer Learning to identify upright or sideways of images`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/transferLearning.ipynb)]
@@ -30,9 +32,7 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2018-05-15 `Convolutional Neural Network using Keras`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/cnn/CNN.ipynb)]
    * Filter | Padding | Stride | Pooling | Cifer10 dataset | VGG16
 
-
 **Text Analytics**
-
 * 2018-04-08 `Text Classification using Naive Bayes`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/TextAnalytics/naiveBayesTextClassification.ipynb)]
    * Bernoulli Naive Bayes | Multinomial Naive Bayes | Laplace Smoothing
 * 2018-12-29 `Sentiment Analysis for Movie Reviews`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/TextAnalytics/SentimentAnalysis.ipynb)]
@@ -41,10 +41,6 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 **KNN Based Modeling**
 * 2018-03-19 `KNN-Based Modeling`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/knn/KNN.ipynb?flush_cache=true)]
    * K-Nearest Neighbors | Local polynomial regression | kernel weighting function
-
-**A/B Testing**
-* 2018-01-06 `Steps to conduct A/B Testings and Caveats`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/abtesting.ipynb)] 
-   * Hypothesis Testing | Type I error, Type II error, Power | Determining Sample Size 
 
 **Customer Lifetime Value**
 * 2017-10-23 `Customer Value calculation using RFM` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/CustomerLifetimeValue/RFM/RFM.ipynb)]
