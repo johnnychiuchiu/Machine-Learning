@@ -82,11 +82,9 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2017-11-24 `Build Up My Own Recommended Song Playlist from Scratch` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/RecommenderSystem/latentFactorModel.ipynb)]
    * Latent Factor Model | Alternating Least Squares | Collaborative Filtering
 
-**Linear Regression**
+**Regression**
 *  2017-11-1 `Linear Regression Model Building Guideline` [[R nbviwer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/LinearRegression/linearRegressionModelBuilding.ipynb)] 
     * Linear Regression | Lasso and Ridge | Model Diagnostics | Model Selection Criterion
-
-**Logistic Regression**
 * 2017-11-09 `Logistic Regression for binary, nominal, and ordinal response` [[R nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/LogisticRegression/logisticRegression.ipynb)]
   * Logistic Regression | Maximum probability classifier | Bayes Classifier | ROC, AUC
   
