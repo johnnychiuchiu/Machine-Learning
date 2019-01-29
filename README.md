@@ -37,6 +37,8 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
    * Bernoulli Naive Bayes | Multinomial Naive Bayes | Laplace Smoothing
 * 2018-12-29 `Sentiment Analysis for Movie Reviews`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/TextAnalytics/SentimentAnalysis.ipynb)]
    * NLP Process | N-gram | TF-IDF | Text Preprocessing | POS Tagging
+* 2019-01-29 `Topic Modeling through Latent Dirichlet Allocation`[[python nbviewer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/TextAnalytics/TopicModeling.ipynb)]
+   * Latent Dirichlet Allocation | Topic Modeling | gensim
 
 **KNN Based Modeling**
 * 2018-03-19 `KNN-Based Modeling`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/knn/KNN.ipynb?flush_cache=true)]
