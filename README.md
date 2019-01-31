@@ -18,11 +18,13 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 
 ### Topics
 
-**Design of experiments for Causal Inference**
+**Design of experiments**
 * 2018-01-06 `Steps to conduct A/B Testings and Caveats`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/abtesting.ipynb)] 
    * Hypothesis Testing | Type I error, Type II error, Power | Determining Sample Size 
 * 2018-10-20 `Inferring Causal Effects from Observational Data`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/Causal/InferringCausalEffects.ipynb)]
   * Propensity Score Matching | MatchIt(library) | CausalImpact(library)   
+* 2019-01-30 `Solving Multi-Armed Bandit Problem through epsilon-Greedy Algorithm`[[python nbviewer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/MultiArmedBandit.ipynb)]
+  * Multi-Armed Bandit | Epsilon Greedy Algorithm | Explore & Exploit
 
 **Deep Learning**
 * 2018-04-14 `Use Transfer Learning to identify upright or sideways of images`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/transferLearning.ipynb)]
