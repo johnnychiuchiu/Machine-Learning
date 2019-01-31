@@ -23,7 +23,7 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
    * Hypothesis Testing | Type I error, Type II error, Power | Determining Sample Size 
 * 2018-10-20 `Inferring Causal Effects from Observational Data`[[R nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/Causal/InferringCausalEffects.ipynb)]
   * Propensity Score Matching | MatchIt(library) | CausalImpact(library)   
-* 2019-01-30 `Solving Multi-Armed Bandit Problem through epsilon-Greedy Algorithm`[[python nbviewer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/MultiArmedBandit.ipynb)]
+* 2019-01-30 `Solving Multi-Armed Bandit Problem through Epsilon-Greedy Algorithm`[[python nbviewer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/abTesting/MultiArmedBandit.ipynb)]
   * Multi-Armed Bandit | Epsilon Greedy Algorithm | Explore & Exploit
 
 **Deep Learning**
