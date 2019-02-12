@@ -33,6 +33,8 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
    * Neural Network | MNIST dataset
 * 2018-05-15 `Convolutional Neural Network using Keras`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/cnn/CNN.ipynb)]
    * Filter | Padding | Stride | Pooling | Cifer10 dataset | VGG16
+* 2019-02-11 `Study Notes on Word Embedding and Word2Vec`[[python nbviewer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/DeepLearning/wordEmbedding.ipynb)]
+   * word embedding | word2vec | skip gram | CBOW | text classification
 
 **Text Analytics**
 * 2018-04-08 `Text Classification using Naive Bayes`[[python nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/TextAnalytics/naiveBayesTextClassification.ipynb)]
