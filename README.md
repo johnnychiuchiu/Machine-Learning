@@ -65,9 +65,11 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2019-01-25 `Optimization and Heuristics` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/OptimizationMethod/Optimization%20and%20Heuristics.ipynb)] 
    * Linear Programming | Piecewise Linear Programming | Shadow Price        
 
-**Model Selection Method**
+**Model Selection Method & Explainability**
 * 2017-12-15 `Model Selection Method` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/modelSelection.ipynb)]
    * Cross Validation | Out of Bag Estimate | Grid Search
+* 2019-02-13 `Machine Learning Explainability` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/ModelSelection/machineLearningExplainability.ipynb)]
+   * Permutation Importance | Partial Dependency Plot | SHAP value |
 
 **Tree based models**
 * 2017-12-11 `Decision Tree Introduction` [[python nbviwer](https://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/EnsembleMethods/decisionTree.ipynb)]
