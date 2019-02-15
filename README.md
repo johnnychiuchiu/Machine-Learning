@@ -120,6 +120,12 @@ A list of end to end machine learning projects. Scopes includes data preprocessi
 * 2018-06-14 `pig command note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/pig_command_note.ipynb)]
 * 2018-10-15 `regular expression note` [[nbviewer](http://nbviewer.jupyter.org/github/johnnychiuchiu/Machine-Learning/blob/master/others/regular_expression_note.ipynb)]
 
+***
+### Good Reads
+* [`What I’ve Learned as a Data Scientist by Gang Su`](https://medium.com/@m.sugang/what-ive-learned-as-a-data-scientist-edb998ac11ec)
+* [`LinkedIn Engineer: The Science of Quality Growth`](https://engineering.linkedin.com/blog/2017/06/the-science-of-quality-growth)
+* [`數據分析慣用的5種思維方法`](https://medium.com/@allaboutdataanalysis/%E6%95%B8%E6%93%9A%E5%88%86%E6%9E%90%E6%85%A3%E7%94%A8%E7%9A%845%E7%A8%AE%E6%80%9D%E7%B6%AD%E6%96%B9%E6%B3%95-ae5e823a3a3f)
+
 
 
 ***
